@@ -1,6 +1,6 @@
 FROM alpine:3.11
-RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.aliyun.com/@g" /etc/apk/repositories && \
-  apk --no-cache add alpine-sdk coreutils cmake \
+RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.huaweicloud.com/@g" /etc/apk/repositories && \
+  apk --update --no-cache add alpine-sdk coreutils cmake \
   && adduser -G abuild -g "Alpine Package Builder" -s /bin/ash -D builder \
   && echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
   && mkdir /packages \
